@@ -13,6 +13,12 @@ void zad2()
     cout << "Podaj liczbe: ";
     cin >> liczba;
 
+    if (!cin)
+    {
+        cout << "Niepoprawne dane\n";
+        return;
+    }
+
     if (liczba == 0)
         cout << "Liczba jest 0\n";
     else if (liczba > 0)
@@ -26,6 +32,12 @@ void zad3()
     int liczba = 0;
     cout << "Podaj liczbe: ";
     cin >> liczba;
+
+    if (!cin)
+    {
+        cout << "Niepoprawne dane\n";
+        return;
+    }
 
     if (liczba == 0)
         cout << "Liczba nie jest ani parzysta ani nieparzysta (0)\n";
@@ -41,7 +53,37 @@ void zad4()
     cout << "Podaj 3 liczby: ";
     cin >> liczba1 >> liczba2 >> liczba3;
 
-    cout << "Najwieksza liczba: " << max(liczba1, max(liczba2, liczba3))<<"\n";
+    if (!cin)
+    {
+        cout << "Niepoprawne dane\n";
+        return;
+    }
+
+    //nr1
+    cout << "Sposob 1: Najwieksza liczba: " << max(liczba1, max(liczba2, liczba3))<<"\n";
+
+    //nr2
+    if (liczba1 > liczba2 && liczba1 > liczba3)
+        cout << "Sposob 2: Najwieksza liczba: " << liczba1 << "\n";
+    else if (liczba2 > liczba1 && liczba2> liczba3)
+        cout << "Sposob 2: Najwieksza liczba: " << liczba2 << "\n";
+    else
+        cout << "Sposob 2: Najwieksza liczba: " << liczba3 << "\n";
+
+    //nr3
+
+    if(liczba1>liczba2)
+        if(liczba1>liczba3)
+            cout << "Sposob 3: Najwieksza liczba: " << liczba1 << "\n";
+        else if(liczba3 > liczba2)
+            cout << "Sposob 3: Najwieksza liczba: " << liczba3 << "\n";
+        else
+            cout << "Sposob 3: Najwieksza liczba: " << liczba2 << "\n";
+    else if(liczba2 > liczba3)
+        cout << "Sposob 3: Najwieksza liczba: " << liczba2 << "\n";
+    else
+        cout << "Sposob 3: Najwieksza liczba: " << liczba3 << "\n";
+        
 }
 
 int main(int argc, char** argv)
